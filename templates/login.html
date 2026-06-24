@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Office Platform | Secure Portal</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+</head>
+<body>
+
+    <div class="login-page-container">
+        <!-- Background Neon Blur Elements -->
+        <div class="blur-circle circle-1"></div>
+        <div class="blur-circle circle-2"></div>
+
+        <!-- Main Flip Card Container -->
+        <div class="card-wrapper" id="cardWrapper">
+            
+            <!-- FRONT SIDE: LOGIN FORM -->
+            <div class="auth-card card-front">
+                <h2>Office Login</h2>
+                <p class="subtitle">अपने क्रेडेंशियल्स के साथ लॉगिन करें</p>
+                
+                <form id="loginForm">
+                    <div class="input-group">
+                        <input type="tel" id="loginMobile" required placeholder=" ">
+                        <label>मोबाइल नंबर</label>
+                    </div>
+                    <div class="input-group">
+                        <input type="password" id="loginPassword" required placeholder=" ">
+                        <label>पासवर्ड</label>
+                    </div>
+                    <button type="submit" class="btn-primary">Secure Login</button>
+                </form>
+                
+                <p class="switch-text">नया अकाउंट बनाना है? <span id="toRegister">Register Here</span></p>
+                <div class="alert-box" id="loginAlert"></div>
+            </div>
+
+            <!-- BACK SIDE: REGISTRATION FORM -->
+            <div class="auth-card card-back">
+                <h2>New Registration</h2>
+                <p class="subtitle">सिस्टम में नया अकाउंट बनाएं</p>
+                
+                <form id="registerForm">
+                    <div class="input-group">
+                        <input type="tel" id="regMobile" required placeholder=" ">
+                        <label>मोबाइल नंबर</label>
+                    </div>
+                    <div class="input-group">
+                        <input type="password" id="regPassword" required placeholder=" ">
+                        <label>पासवर्ड सेट करें</label>
+                    </div>
+                    
+                    <!-- Captcha Section Only For Registration -->
+                    <div class="captcha-wrapper">
+                        <div class="captcha-box" id="captchaQuestion">Loading...</div>
+                        <div class="input-group captcha-input">
+                            <input type="number" id="regCaptcha" required placeholder=" ">
+                            <label>कैप्चा भरें</label>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn-primary">Create Account</button>
+                </form>
+                
+                <p class="switch-text">पहले से अकाउंट है? <span id="toLogin">Login Here</span></p>
+                <div class="alert-box" id="regAlert"></div>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/login.js') }}"></script>
+</body>
+</html>
