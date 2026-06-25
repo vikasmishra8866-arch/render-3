@@ -21,7 +21,7 @@ function getNewCaptcha() {
         });
 }
 
-// 3. लॉगिन फॉर्म सबमिशन
+// 3. लॉगिन फॉर्म सबमिशन (इसमें रीडायरेक्ट लॉजिक जुड़ा हुआ है)
 document.getElementById('loginForm').addEventListener('submit', function(e) {
     e.preventDefault();
     const mobile = document.getElementById('loginMobile').value;
@@ -38,7 +38,11 @@ document.getElementById('loginForm').addEventListener('submit', function(e) {
         if(data.status === "success") {
             alertBox.className = "alert-box alert-success";
             alertBox.innerText = data.message;
-            // आगे हम यहाँ डैशबोर्ड पर रिडायरेक्ट करेंगे
+            
+            // लॉगिन सफल होने पर 1.5 सेकंड बाद डैशबोर्ड पेज खुल जाएगा
+            setTimeout(() => {
+                window.location.href = '/dashboard';
+            }, 1500);
         } else {
             alertBox.className = "alert-box alert-danger";
             alertBox.innerText = data.message;
