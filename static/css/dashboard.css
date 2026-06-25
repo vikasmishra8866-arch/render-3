@@ -1,0 +1,146 @@
+:root {
+    --bg-main: #040711;
+    --sidebar-bg: rgba(255, 255, 255, 0.02);
+    --border-color: rgba(255, 255, 255, 0.06);
+    --neon-orange: #ff7b00;
+    --neon-blue: #00f2fe;
+    --text-muted: #62728d;
+}
+
+body {
+    background-color: var(--bg-main);
+    color: #fff;
+    margin: 0;
+    font-family: 'Segoe UI', system-ui, sans-serif;
+}
+
+.dashboard-wrapper {
+    display: flex;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Background Glow */
+.glow-bg {
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(0, 242, 254, 0.05) 0%, transparent 70%);
+    top: -10%;
+    right: -10%;
+    pointer-events: none;
+}
+
+/* Sidebar Design */
+.sidebar {
+    width: 280px;
+    background: var(--sidebar-bg);
+    backdrop-filter: blur(20px);
+    border-right: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+    padding: 30px 20px;
+    box-sizing: border-box;
+}
+
+.sidebar-brand h2 {
+    margin: 0;
+    font-size: 22px;
+    background: linear-gradient(45deg, #fff, #a3b8cc);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.status-indicator { font-size: 12px; color: #2ecc71; display: block; margin-top: 5px; }
+
+.sidebar-menu { margin-top: 40px; flex: 1; }
+.menu-section { margin-bottom: 30px; }
+.section-title { font-size: 11px; text-transform: uppercase; color: var(--text-muted); letter-spacing: 1.5px; display: block; margin-bottom: 12px; }
+
+/* Menu Items with Premium Transitions */
+.menu-item {
+    display: block;
+    color: #a3b8cc;
+    padding: 14px 16px;
+    text-decoration: none;
+    border-radius: 12px;
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+.menu-item:hover, .menu-item.active {
+    color: #fff;
+    background: rgba(255, 255, 255, 0.04);
+    box-shadow: inset 0 0 10px rgba(0, 242, 254, 0.1);
+    transform: translateX(5px);
+}
+
+/* Pawan Auto Premium Custom Dropdown */
+.custom-dropdown {
+    background: rgba(255, 123, 0, 0.02);
+    border: 1px solid rgba(255, 123, 0, 0.1);
+    border-radius: 14px;
+    padding: 5px;
+}
+.dropdown-header {
+    padding: 12px;
+    font-weight: 600;
+    color: var(--neon-orange);
+    text-shadow: 0 0 10px rgba(255, 123, 0, 0.2);
+}
+.dropdown-item {
+    display: block;
+    color: #a3b8cc;
+    padding: 12px;
+    text-decoration: none;
+    border-radius: 10px;
+    font-size: 14px;
+    margin-top: 5px;
+    transition: all 0.3s ease;
+    border-left: 2px solid transparent;
+}
+
+/* टच (Hover) करने पर स्मूथ नियॉन ग्लो और शिफ्ट ट्रांजिशन */
+.dropdown-item:hover {
+    color: #fff;
+    background: rgba(255, 123, 0, 0.08);
+    border-left: 2px solid var(--neon-orange);
+    box-shadow: 0 4px 15px rgba(255, 123, 0, 0.1);
+    transform: translateX(3px);
+}
+
+/* Main Content Area */
+.main-content {
+    flex: 1;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+.content-header h1 { margin: 0; font-size: 32px; }
+.content-header p { color: var(--text-muted); margin: 5px 0 0 0; }
+
+.dashboard-grid { flex: 1; margin-top: 40px; }
+.welcome-card {
+    background: rgba(255, 255, 255, 0.01);
+    border: 1px solid var(--border-color);
+    padding: 30px;
+    border-radius: 20px;
+    max-width: 600px;
+}
+.welcome-card h3 { margin: 0 0 10px 0; color: var(--neon-blue); }
+.welcome-card p { color: #a3b8cc; line-height: 1.6; margin: 0; }
+
+.logout-btn { color: #e74c3c; text-decoration: none; font-weight: 600; transition: opacity 0.3s; }
+.logout-btn:hover { opacity: 0.8; }
+
+/* PREMIUM FOOTER STYLING */
+.premium-footer {
+    border-top: 1px solid var(--border-color);
+    padding-top: 20px;
+    text-align: center;
+}
+.premium-footer p {
+    margin: 0;
+    font-size: 13px;
+    color: var(--text-muted);
+    letter-spacing: 0.5px;
+}
