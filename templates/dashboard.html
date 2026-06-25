@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Office Dashboard | Premium Portal</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}">
+</head>
+<body>
+
+    <div class="dashboard-wrapper">
+        <div class="glow-bg"></div>
+
+        <aside class="sidebar">
+            <div class="sidebar-brand">
+                <h2>Vikas Mishra</h2>
+                <span class="status-indicator">🟢 Office Admin</span>
+            </div>
+            
+            <nav class="sidebar-menu">
+                <div class="menu-section">
+                    <span class="section-title">Main Portal</span>
+                    <a href="#" class="menu-item active">📊 Analytics Overview</a>
+                </div>
+
+                <div class="menu-section">
+                    <span class="section-title">Finance Software</span>
+                    <div class="custom-dropdown">
+                        <div class="dropdown-header">🚗 Pawan Auto</div>
+                        <div class="dropdown-content">
+                            <a href="https://pawanauto.tapandtype.com/login.php" target="_blank" class="dropdown-item">
+                                🔑 Customer Loan Data
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+
+            <div class="sidebar-footer">
+                <a href="/logout" class="logout-btn">🚪 Logout</a>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <header class="content-header">
+                <div class="welcome-text">
+                    <h1>Dashboard Overview</h1>
+                    <p>Welcome to your centralized office operations hub.</p>
+                </div>
+            </header>
+
+            <div class="dashboard-grid">
+                <div class="welcome-card">
+                    <h3>Quick Connect Activated</h3>
+                    <p>सफलतापूर्वक लॉगिन हो चुका है। पवन ऑटो सॉफ़्टवेयर को सिंक कर दिया गया है। लोन डेटा देखने के लिए साइडबार में दिए गए ऑप्शन पर क्लिक करें।</p>
+                </div>
+            </div>
+
+            <footer class="premium-footer">
+                <p>© 2026 Vikas Mishra. All Rights Reserved.</p>
+            </footer>
+        </main>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/dashboard.js') }}"></script>
+</body>
+</html>
